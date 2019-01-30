@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My First Paragraph</p>
+
+<p id="demo">
+	<h1>Task</h1>
+<table>
+	<th>Table index</th>
+	<th>value</th>
+	<th>Dt</th>
+	<th>count</th>
+
+</table>
+</p>
+
+<script>
+//original array
+//var sample_input = [1,2,"mr","ra",[0,2,4],true,function add(val1,val2){return val1+val2},new Date(2018, 11, 24),{1:"one",2:"two",3:"three"},{"isbn": ["123-456-222"], "author": {"lname": "Doe","fname": "Jane"}}];
+document.write("<b>sample_input</b>");
+document.write("</br>");
+var sample_input = [10,20,"akshay","mrunal",{a:{b:function add(val1,val2){return val1+val2},c:"ronak",d:10}}];
+var al = sample_input.length
+document.write("object size" , al);
+document.createElement('br');
+var count = 0;
+for(var i=0;i<=al-1;i++)
+{	
+	var type = typeof(sample_input[i]);
+	if (type == "number"){
+	var count = i+sample_input[i]
+	console.log(i , sample_input[i],"no.", count);
+	document.write('<br/>');
+	document.write(i ,"&nbsp;", sample_input[i]  ,"&nbsp;","no." ,"&nbsp;", count);
+	}
+	else if(type == "string"){
+	console.log(i , sample_input[i] ,"string", sample_input[i]);
+	document.write('<br/>');
+	document.write(i ,"&nbsp;", sample_input[i]  ,"&nbsp;","string." ,"&nbsp;", count);
+	}
+	else if(type == "object"){
+		if (Array.isArray(sample_input[i])){
+			var nl = sample_input[i].length
+			for (var j=0;j>=nl-1;j++){
+			}
+			console.log(i , sample_input[i] ,"Array", count);
+			document.write('<br/>');
+			document.write(i ,"&nbsp;", sample_input[i]  ,"&nbsp;","Array" ,"&nbsp;", count);
+			continue;
+		}
+		if (sample_input[i] instanceof Date){
+		    console.log(i , sample_input[i] ,"date", count);
+		    document.write('<br/>');
+		    document.write(i ,"&nbsp;", sample_input[i]  ,"&nbsp;","date" ,"&nbsp;", count);	
+		    continue;
+		}
+	console.log(i , sample_input[i] ,"obj", count);
+	document.write('<br/>');
+	document.write(i ,"&nbsp;", sample_input[i]  ,"&nbsp;","obj" ,"&nbsp;", count);
+	}
+	else if(type == "function"){
+	console.log(i , sample_input[i] ,"fun",sample_input[i](10,20) );
+	document.write('<br/>');
+	document.write(i ,"&nbsp;", sample_input[i]  ,"&nbsp;","fun" ,"&nbsp;", sample_input[i](10,20));
+	}
+	else if(type == "boolean"){
+	console.log(i , sample_input[i] ,"bool", count);
+	document.write('<br/>');
+	document.write(i ,"&nbsp;", sample_input[i]  ,"&nbsp;","bool" ,"&nbsp;", count);
+	}
+	else{
+		console.log("other thing please check")
+	}
+}
+document.write("<br><b> New Array </b>");
+</script>
+
+</body>
+</html> 
